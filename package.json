@@ -7,21 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vicmator/Angular2-Webpack.git"    
-  },
   "keywords": [
     "Angular2",
     "Typescripts",
     "webpack"
   ],
-  "author": "Victor Manuel Fernandez Lopez",
+  "author": "Victor Manuel Fernandez Lopez <vimafelo@hotmail.es>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vicmator/Angular2-Webpack/issues"
-  },
-  "homepage": "https://github.com/vicmator/Angular2-Webpack#readme",
   "dependencies": {
     "@angular/common": "^2.4.1",
     "@angular/compiler": "^2.4.1",
@@ -37,8 +29,8 @@
     "@types/core-js": "^0.9.35",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "html-webpack-plugin": "^2.26.0", //include a hash in the filename which changes every compilation
-    "style-loader": "^0.13.1", //Adds CSS to the DOM by injecting a <style> tag
+    "html-webpack-plugin": "^2.26.0",
+    "style-loader": "^0.13.1",
     "ts-loader": "^1.3.3",
     "typescript": "^2.1.4",
     "webpack": "^1.14.0",
