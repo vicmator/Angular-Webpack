@@ -1,0 +1,27 @@
+{
+  "name": "angular2-webpack",
+  "version": "1.0.0",
+  "description": "It's a single page using Angular2 and Typescript with Webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vicmator/Angular2-Webpack.git"
+  },
+  "keywords": [
+    "Angular2",
+    "Typescripts",
+    "webpack"
+  ],
+  "author": "Victor Manuel Fernandez Lopez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vicmator/Angular2-Webpack/issues"
+  },
+  "homepage": "https://github.com/vicmator/Angular2-Webpack#readme",
+  "devDependencies": {
+    "typescript": "^2.1.4"
+  }
+}
