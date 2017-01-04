@@ -4,12 +4,12 @@
   "description": "It's a single page using Angular2 and Typescript with Webpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vicmator/Angular2-Webpack.git",
-    "start": "webpack-dev-server"
+    "url": "git+https://github.com/vicmator/Angular2-Webpack.git"    
   },
   "keywords": [
     "Angular2",
