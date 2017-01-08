@@ -9,7 +9,7 @@ module.exports = {
   context: path.join(basePath, "src"),
 
   resolve: {
-    extensions: ['', '.js', '.ts']
+    extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.html']
   },
 
   entry: {
@@ -38,25 +38,30 @@ module.exports = {
   devServer: {
     contentBase: './dist', //Content base
     inline: true, //Enable watch and live reload
-    noInfo: true,
+    // noInfo: true,
     host: 'localhost',
     port: 8080,
-    stats: 'errors-only'
+    stats: 'minimal'
   },
 
   devtool: 'source-map',
 
   module: {
     loaders: [
+      // Support for .ts files.
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        loader: 'ts'
+        loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style', 'css')
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw-loader'
       }
     ]
   },
