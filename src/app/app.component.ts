@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-class App {
+class AppComponent {
   title: string = "Hello Angular 2 with Webpack!"
 
   ngOnInit() {
@@ -16,5 +16,5 @@ class App {
 }
 
 export {
-  App
+  AppComponent
 }
