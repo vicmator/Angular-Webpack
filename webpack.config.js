@@ -54,10 +54,17 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
       },
+      // Load globally scss styles.
       {
         test: /\.scss$/,
-        exclude: /node_modules/,
-        loader: 'style-loader!css-loader!sass-loader'
+        exclude: root('src', 'app'),
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass')
+      },
+      // Load component styles here. When loaded with styleUrls in component, string of styles expected.
+      {
+        test: /\.scss$/,
+        include: root('src', 'app'),
+        loader: 'raw!sass'
       },
       {
         test: /\.css$/,
@@ -80,4 +87,10 @@ module.exports = {
     })
   ]
 
+}
+
+// Helper functions
+function root(args) {
+  args = Array.prototype.slice.call(arguments, 0);
+  return path.join.apply(path, [__dirname].concat(args));
 }
