@@ -15,7 +15,7 @@ module.exports = {
   entry: {
     app: './index.ts',
     styles: [
-      './css/site.css'
+      './css/site.scss'
     ],
     vendor: [
       "core-js",
@@ -55,9 +55,14 @@ module.exports = {
         loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
       },
       {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loader: 'style-loader!css-loader!sass-loader'
+      },
+      {
         test: /\.css$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract('style', 'css')
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
       },
       {
         test: /\.html$/,

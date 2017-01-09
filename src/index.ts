@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { App } from './components/app.component';
+import { App } from './app/app.component';
 
 @NgModule({
     declarations: [App], //defines which components we are going to use in this module
