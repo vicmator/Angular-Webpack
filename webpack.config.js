@@ -15,7 +15,7 @@ module.exports = {
   entry: {
     app: './index.ts',
     styles: [
-      './css/site.css'
+      './css/site.scss'
     ],
     vendor: [
       "core-js",
@@ -54,10 +54,22 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
       },
+      // Load globally scss styles.
+      {
+        test: /\.scss$/,
+        exclude: root('src', 'app'),
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass')
+      },
+      // Load component styles here. When loaded with styleUrls in component, string of styles expected.
+      {
+        test: /\.scss$/,
+        include: root('src', 'app'),
+        loader: 'raw!sass'
+      },
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract('style', 'css')
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
       },
       {
         test: /\.html$/,
@@ -75,4 +87,10 @@ module.exports = {
     })
   ]
 
+}
+
+// Helper functions
+function root(args) {
+  args = Array.prototype.slice.call(arguments, 0);
+  return path.join.apply(path, [__dirname].concat(args));
 }
