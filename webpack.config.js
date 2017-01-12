@@ -41,7 +41,8 @@ module.exports = {
     // noInfo: true,
     host: 'localhost',
     port: 8080,
-    stats: 'minimal'
+    stats: 'minimal',
+    historyApiFallback: true
   },
 
   devtool: 'source-map',
