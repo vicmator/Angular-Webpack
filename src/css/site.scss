@@ -1,3 +1,8 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
+// Import bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
 $color-base : green;
 
 h1 {
