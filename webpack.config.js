@@ -69,13 +69,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader")
       },
       {
         test: /\.html$/,
         loader: 'raw-loader'
-      }
+      },
+      {
+        test: /\.(woff2?|ttf|eot|svg)$/,
+        loader: 'url?limit=10000'
+      },
     ]
   },
 
