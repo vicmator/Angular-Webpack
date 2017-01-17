@@ -28,12 +28,7 @@ class TabsComponent implements AfterContentInit {
 
     tab.active = true;
   }
-
 }
-
-// class TabsComponent  {
-
-// }
 
 export {
   TabsComponent
