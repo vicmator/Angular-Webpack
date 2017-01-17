@@ -1,10 +1,6 @@
 <ul class="nav nav-tabs">
-  <!--<li *ngFor="let tab in tabList" (click)="selectTab(tab)" [class-active]="tab.active">
-    <a href="#">{{tab.title}}</a>
-  </li>-->
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">Menu 1</a></li>
-  <li><a href="#">Menu 2</a></li>
-  <li><a href="#">Menu 3</a></li>
+    <li *ngFor="let tab of tabList" (click)="selectTab(tab)" [class.active]="tab.active">
+        <a href="#">{{tab.title}}</a>
+    </li>
 </ul>
-<!--<ng-content></ng-content>-->
+<ng-content></ng-content>

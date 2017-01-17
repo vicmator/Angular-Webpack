@@ -8,8 +8,10 @@ import { Component, Input } from '@angular/core';
 })
 
 class TabComponent {
-  @Input('tabTitle') title:string
-  @Input()active = false;
+  @Input('tabTitle') 
+  title:string
+  @Input()
+  active = false;
 }
 
 export {

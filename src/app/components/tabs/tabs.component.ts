@@ -9,29 +9,31 @@ import { TabComponent } from './tab/tab.component';
   styleUrls: ['./tabs.component.scss']
 })
 
-// class TabsComponent implements AfterContentInit {
-//   @ContentChildren(TabComponent) tabList: QueryList<TabComponent>;
+class TabsComponent implements AfterContentInit {
+  @ContentChildren(TabComponent) tabList: QueryList<TabComponent>;
 
-//   ngAfterContentInit() {
-//     // get All active tab
-//     let activeTabs = this.tabList.filter((tab) => tab.active);
+  ngAfterContentInit() {
+    // get All active tab
+    let tabs = this.tabList;
+    var countTabs = tabs.length;
+    let activeTabs = this.tabList.filter((tab) => tab.active);
 
-//     if(activeTabs.length === 0) {
-//       this.selectTab(this.tabList.first);
-//     }
-//   }
+    if(activeTabs.length === 0) {
+      this.selectTab(this.tabList.first);
+    }
+  }
 
-//   selectTab(tab: TabComponent) {
-//     this.tabList.toArray().forEach((tab) => tab.active = false);
+  selectTab(tab: TabComponent) {
+    this.tabList.toArray().forEach((tab) => tab.active = false);
 
-//     tab.active = true;
-//   }
-
-// }
-
-class TabsComponent  {
+    tab.active = true;
+  }
 
 }
+
+// class TabsComponent  {
+
+// }
 
 export {
   TabsComponent
