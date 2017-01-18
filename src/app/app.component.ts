@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { TabsComponent } from './components/tabs/tabs.component';
+import { HeaderComponent } from './components/common/header/header.component';
 
 @Component(
 {

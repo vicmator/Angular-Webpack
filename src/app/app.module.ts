@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TabComponent } from './components/tabs/tab/tab.component';
+import { HeaderComponent } from './components/common/header/header.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { TabComponent } from './components/tabs/tab/tab.component';
       AboutComponent,
       TabsComponent,
       TabComponent,
+      HeaderComponent
       ], //defines which components we are going to use in this module
     imports: [BrowserModule, routing], //describes which dependencies this module has
     bootstrap: [AppComponent] //this property tells Angular to load, in this case, App component as the top-level component.
