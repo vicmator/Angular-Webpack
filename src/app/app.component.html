@@ -7,8 +7,12 @@
   <router-outlet></router-outlet>-->
   <div class="row col-xs-8">
     <tabs>
-      <tab [tabTitle]="'Multi Result'"> Multi Result Content </tab>
-      <tab tabTitle="Doble Chance"> Doble Chance </tab>
+      <tab [tabTitle]="'Multi Result'">
+        <table-bet></table-bet>
+      </tab>
+      <tab tabTitle="Doble Chance">
+        <table-bet></table-bet>
+      </tab>
       <tab tabTitle="Correct Score"> Correct Score </tab>
     </tabs>
   </div>

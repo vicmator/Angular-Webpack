@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { TabsComponent } from './components/tabs/tabs.component';
 import { HeaderComponent } from './components/common/header/header.component';
+import { TableComponent } from './components/table/table.component';
 
 @Component(
 {
