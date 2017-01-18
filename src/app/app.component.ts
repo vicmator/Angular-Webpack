@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { TabsComponent } from './components/tabs/tabs.component';
+
 @Component(
 {
   selector: 'app', //This property is used to define how to call this component from HTML
@@ -8,11 +10,8 @@ import { Component } from '@angular/core';
 })
 
 class AppComponent {
-  title: string = "Hello Angular 2 with Webpack!"
+  title: string = "BET VICTOR"
 
-  ngOnInit() {
-    console.log('Hello Component');
-  }
 }
 
 export {

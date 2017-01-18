@@ -2,7 +2,14 @@
   <h1>  {{title}} </h1>
 
   <!-- Routing for Example Application -->
-  <a routerLink="/">Home</a>
+  <!--<a routerLink="/">Home</a>
   <a routerLink="/about">About</a>
-  <router-outlet></router-outlet>
+  <router-outlet></router-outlet>-->
+  <div class="row col-xs-6">
+    <tabs>
+      <tab [tabTitle]="'Multi Result'"><div> Multi Result Content</div></tab>
+      <tab tabTitle="Doble Chance"> <div> Doble Chance</div></tab>
+      <tab tabTitle="Correct Score"> <div> Correct Score</div></tab>
+    </tabs>
+  </div>
 </div>
