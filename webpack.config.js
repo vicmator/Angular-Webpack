@@ -79,6 +79,7 @@ module.exports = {
         test: /\.(woff2?|ttf|eot|svg)$/,
         loader: 'url?limit=10000'
       },
+      {test: /\.json$/, loader: 'json-loader'},
     ]
   },
 

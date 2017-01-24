@@ -1,14 +1,13 @@
-import { Promise } from "core-js";
 import { BetModel } from '../model/betModel';
+import { Promise } from "core-js";
 import { CorrectScoreModel } from '../model/correctScore';
 
-var betDataJSON = require('json!./betMockData.json');
+var betDataJSON = require('./betData.json');
 
-class BetAPI {
-
-    private parseJSON() {
-      return betDataJSON.json();
-    }
+export class BetAPI {
+  public getBetsJson(): BetModel {
+    return this.mapBetsJsonToBetsEntityCollection(betDataJSON);
+  }
 
   private mapBetsJsonToBetsEntityCollection(data): BetModel {
     var betModel : BetModel;
@@ -34,3 +33,5 @@ class BetAPI {
     return betModel;
   }
 }
+
+// export const betApi = new BetAPI();

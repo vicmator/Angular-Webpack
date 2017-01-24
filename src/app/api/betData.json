@@ -35,19 +35,19 @@
       "id": 1,
       "localScore": 2,
       "awayScore": 1,
-      "rate": 2.14,
+      "rate": 2.14
     },
     {
       "id": 2,
       "localScore": 2,
       "awayScore": 2,
-      "rate": 2.34,
+      "rate": 2.34
     },
     {
       "id": 3,
       "localScore": 0,
       "awayScore": 0,
-      "rate": 2.14,
+      "rate": 2.14
     }
   ]
 }
