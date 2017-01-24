@@ -1,4 +1,3 @@
-import { CorrectScoreModel } from './../model/correctScore';
 import { BetModel } from './../model/betModel';
 
 export const betMockData: BetModel = {

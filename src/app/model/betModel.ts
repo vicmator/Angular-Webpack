@@ -1,4 +1,4 @@
-import { MultiResultModel } from './multiResultModel';
+import { MultiResultModel } from './multiResult';
 import { DobleChanceModel } from './dobleChance';
 import { CorrectScoreModel } from './correctScore';
 
