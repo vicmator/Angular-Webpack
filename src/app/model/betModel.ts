@@ -8,7 +8,7 @@ export class BetModel {
   awayTeam: string;
   multiResult: MultiResultModel;
   dobleChance: DobleChanceModel;
-  CorrectScoreModel: CorrectScoreModel[];
+  correctScoreModel: CorrectScoreModel[];
 
   constructor() {
     this.id = -1;
@@ -16,6 +16,6 @@ export class BetModel {
     this.awayTeam = "";
     this.multiResult = new MultiResultModel();
     this.dobleChance = new DobleChanceModel();
-    this.CorrectScoreModel = [];
+    this.correctScoreModel = [];
   }
 }
