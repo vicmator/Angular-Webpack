@@ -1,5 +1,5 @@
 export const typeBetEnum =  {
-  DobleChance: 'DobleChance',
-  MultiResult: 'MultiResult',
-  CorrectScore: 'CorrectScore'
+  DobleChance: 'dobleChance',
+  MultiResult: 'multiResult',
+  CorrectScore: 'correctScore'
 };
