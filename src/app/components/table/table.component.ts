@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BetAPI } from '../../api/betApi';
 import { BetModel } from './../../model/betModel';
 
@@ -11,6 +11,9 @@ import { BetModel } from './../../model/betModel';
 })
 
 class TableComponent implements OnInit{
+  @Input()
+  typeBet: string;
+  
   betsModel: BetModel[];
 
   constructor(betApi: BetAPI) {
