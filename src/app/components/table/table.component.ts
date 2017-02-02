@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BetAPI } from '../../api/betApi';
 import { BetModel } from './../../model/betModel';
 import { typeBetEnum } from '../../common/typeBetEnum';
+import { titleTableBet } from './../../common/titleTableBet';
 
 @Component(
 {
@@ -15,21 +16,26 @@ class TableComponent implements OnInit{
   @Input()
   typeBet: string;
 
-  betArray: string[];
-  betsModel: BetModel[];
+  options: Array<string>;
+  betsModel: Array<BetModel>;
+  titles: Array<string>;
 
-  constructor(betApi: BetAPI) {
+  constructor(private betApi: BetAPI) {
     this.betsModel = betApi.getAllBetsJson();
   }
 
   ngOnInit() {
-    if(this.typeBet === typeBetEnum.MultiResult)
-      this.betArray = ['homeRate', 'drawRate', 'awayRate'];
-    else
-      this.betArray = ['homeDrawRate', 'homeAwayRate', 'awayDrawRate'];
+    if(this.typeBet === typeBetEnum.MultiResult) {
+      this.options = ['homeRate', 'drawRate', 'awayRate'];
+      this.titles = titleTableBet.MultiResultTitle;
+    }
+    else {
+      this.options = ['homeDrawRate', 'homeAwayRate', 'awayDrawRate'];
+      this.titles = titleTableBet.DobleChanceTitle;
+    }
   }
 
-  setBet(betModel: BetModel, betName:string) {
+  setBet(button, betModel: BetModel, betName:string) {
     // betType
   }
 }

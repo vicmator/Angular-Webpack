@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { HeaderComponent } from './components/common/header/header.component';
 import { TableComponent } from './components/table/table.component';
+import { typeBetEnum } from './common/typeBetEnum';
 
 @Component(
 {
@@ -12,8 +13,7 @@ import { TableComponent } from './components/table/table.component';
 })
 
 class AppComponent {
-  title: string = "BET VICTOR"
-
+  typeBetEnum = typeBetEnum;
 }
 
 export {

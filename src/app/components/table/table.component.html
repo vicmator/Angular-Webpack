@@ -4,17 +4,20 @@
     <thead>
       <tr>
         <th>Match</th>
-        <th *ngFor="let bet of betArray">
-          {{bet}}
+        <th *ngFor="let title of titles">
+          {{title}}
         </th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let betModel of betsModel">
         <td>{{betModel.homeTeam}} - {{betModel.awayTeam}}</td>
-        <td *ngFor="let betOption of betArray">
-          <button type="button" class="btn btn-link" (click)= "setBet(betModel, betOption)">
-            {{betModel[typeBet][betOption].rate}}
+        <td *ngFor="let option of options; let i=index">
+          <button id="btn{{betModel.id}}{{i}}"
+                  type="button"
+                  class="btn btn-link"
+                  (click)= "setBet($event.currentTarget.id, betModel, betOption)">
+            {{betModel[typeBet][option].rate}}
           </button>
         </td>
       </tr>
