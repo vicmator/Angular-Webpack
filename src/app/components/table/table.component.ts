@@ -35,8 +35,9 @@ class TableComponent implements OnInit{
     }
   }
 
-  setBet(button, betModel: BetModel, betName:string) {
+  setBet(buttonId, betModel: BetModel, betName:string) {
     // betType
+    (<HTMLInputElement> document.getElementById(buttonId)).disabled = true;
   }
 }
 
