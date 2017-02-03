@@ -8,8 +8,7 @@ import { titleTableBet } from './../../common/titleTableBet';
 {
   selector: 'table-bet',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss'],
-  providers: [BetAPI]
+  styleUrls: ['./table.component.scss']
 })
 
 class TableComponent implements OnInit{

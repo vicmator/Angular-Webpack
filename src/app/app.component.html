@@ -2,17 +2,15 @@
   <header></header>
   <div class="row col-xs-8">
     <tabs>
-      <tab [tabTitle]="'Multi Result'">
-        <table-bet typeBet="{{typeBetEnum.MultiResult}}">
-
-        </table-bet>
+      <tab tabTitle="Multi Result">
+        <table-bet typeBet="{{typeBetEnum.MultiResult}}"></table-bet>
       </tab>
       <tab tabTitle="Doble Chance">
-        <table-bet typeBet="{{typeBetEnum.DobleChance}}">
-
-        </table-bet>
+        <table-bet typeBet="{{typeBetEnum.DobleChance}}"></table-bet>
       </tab>
-      <tab tabTitle="Correct Score"> Correct Score </tab>
+      <tab tabTitle="Correct Score">
+        <correct-Score></correct-Score>
+      </tab>
     </tabs>
   </div>
 </div>
