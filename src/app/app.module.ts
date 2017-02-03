@@ -5,8 +5,6 @@ import { routing } from './app.routing';
 
 // Application components
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TabComponent } from './components/tabs/tab/tab.component';
 import { HeaderComponent } from './components/common/header/header.component';
@@ -15,8 +13,6 @@ import { TableComponent } from './components/table/table.component';
 @NgModule({
     declarations: [
       AppComponent,
-      HomeComponent,
-      AboutComponent,
       TabsComponent,
       TabComponent,
       HeaderComponent,
