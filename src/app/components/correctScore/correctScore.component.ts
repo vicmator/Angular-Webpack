@@ -10,6 +10,7 @@ import { BetModel } from './../../model/betModel';
 
 export class CorrectScoreComponent implements OnInit  {
 
+  resultsVisible: boolean = true;
   betsModel: Array<BetModel>;
 
   constructor(private betApi: BetAPI) {
@@ -17,4 +18,6 @@ export class CorrectScoreComponent implements OnInit  {
   }
 
   ngOnInit() { console.log('ngOnInit Correct CorrecScore'); }
+
+  activeResults() {}
 }
