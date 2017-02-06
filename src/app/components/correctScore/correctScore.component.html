@@ -1,0 +1,26 @@
+
+  <div *ngFor="let bet of betsModel" class="col-xs-12 correctScoreHeader">
+      <span class="glyphicon glyphicon-chevron-down" (click)="activeResults()"></span>
+      {{bet.homeTeam}} - {{bet.awayTeam}}
+
+      <div id="resultScore{{bet.id}}" class="col-xs-12" *ngIf="resultsVisible">
+        <!--HOME VICTORY-->
+        <div class="col-xs-4">
+          <div *ngFor="let resultScore of bet.correctScoreModel" class="col-xs-12">
+            {{resultScore.id}}
+          </div>
+        </div>
+        <!--DRAW-->
+        <div class="col-xs-4">
+          <div *ngFor="let resultScore of bet.correctScoreModel" class="col-xs-12">
+            {{resultScore.id}}
+          </div>
+        </div>
+        <!--VISITANT VICTORY-->
+        <div class="col-xs-4">
+          <div *ngFor="let resultScore of bet.correctScoreModel" class="col-xs-12">
+            {{resultScore.id}}
+          </div>
+        </div>
+      </div>
+  </div>

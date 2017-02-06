@@ -1,0 +1,25 @@
+<!--<h2></h2>
+<p></p>-->
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Match</th>
+        <th *ngFor="let title of titles">
+          {{title}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let betModel of betsModel">
+        <td>{{betModel.homeTeam}} - {{betModel.awayTeam}}</td>
+        <td *ngFor="let option of options; let i=index">
+          <button id="btn{{betModel.id}}{{option}}"
+                  type="button"
+                  class="btn btn-link "
+                  (click)= "setBet($event.currentTarget.id, betModel, option)">
+            {{betModel[typeBet][option].rate}}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+</table>

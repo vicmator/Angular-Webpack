@@ -1,15 +1,16 @@
 <div class="container">
   <header></header>
-
-  <!-- Routing for Example Application -->
-  <!--<a routerLink="/">Home</a>
-  <a routerLink="/about">About</a>
-  <router-outlet></router-outlet>-->
   <div class="row col-xs-8">
     <tabs>
-      <tab [tabTitle]="'Multi Result'"> Multi Result Content </tab>
-      <tab tabTitle="Doble Chance"> Doble Chance </tab>
-      <tab tabTitle="Correct Score"> Correct Score </tab>
+      <tab tabTitle="Multi Result">
+        <table-bet typeBet="{{typeBetEnum.MultiResult}}"></table-bet>
+      </tab>
+      <tab tabTitle="Doble Chance">
+        <table-bet typeBet="{{typeBetEnum.DobleChance}}"></table-bet>
+      </tab>
+      <tab tabTitle="Correct Score">
+        <correct-Score></correct-Score>
+      </tab>
     </tabs>
   </div>
 </div>
