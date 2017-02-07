@@ -3,23 +3,35 @@
       <span class="glyphicon glyphicon-chevron-down" (click)="activeResults()"></span>
       {{bet.homeTeam}} - {{bet.awayTeam}}
 
-      <div id="resultScore{{bet.id}}" class="col-xs-12" *ngIf="resultsVisible">
-        <!--HOME VICTORY-->
+      <div id="resultScore{{bet.id}}" class="col-xs-12 text-center marginTopBottom" *ngIf="resultsVisible">
+        <!--HOME WIN-->
         <div class="col-xs-4">
-          <div *ngFor="let resultScore of bet.correctScoreModel" class="col-xs-12">
-            {{resultScore.id}}
+          <span class="label label-primary">{{bet.homeTeam}} win</span>
+          <div *ngFor="let resultScore of (bet.correctScoreModel | filterTypeResult: 'homeWin')"
+               class="col-xs-12 marginResultScore">
+               <button class="btn btn-default">
+                 {{resultScore.localScore}} - {{resultScore.awayScore}} ({{resultScore.rate}})
+               </button>
           </div>
         </div>
         <!--DRAW-->
         <div class="col-xs-4">
-          <div *ngFor="let resultScore of bet.correctScoreModel" class="col-xs-12">
-            {{resultScore.id}}
+          <span class="label label-primary">Draw</span>
+          <div *ngFor="let resultScore of (bet.correctScoreModel | filterTypeResult: 'draw')"
+               class="col-xs-12 marginResultScore">
+               <button class="btn btn-default">
+                 {{resultScore.localScore}} - {{resultScore.awayScore}} ({{resultScore.rate}})
+               </button>
           </div>
         </div>
-        <!--VISITANT VICTORY-->
+        <!--VISITANT WIN-->
         <div class="col-xs-4">
-          <div *ngFor="let resultScore of bet.correctScoreModel" class="col-xs-12">
-            {{resultScore.id}}
+          <span class="label label-primary">{{bet.awayTeam}} win</span>
+          <div *ngFor="let resultScore of (bet.correctScoreModel | filterTypeResult: 'awayWin')"
+               class="col-xs-12 marginResultScore">
+            <button class="btn btn-default">
+                 {{resultScore.localScore}} - {{resultScore.awayScore}} ({{resultScore.rate}})
+               </button>
           </div>
         </div>
       </div>
