@@ -11,14 +11,31 @@ import { typeCorrectScoreEnum } from './../../common/typeCorrectScoreEnum';
 
 export class CorrectScoreComponent implements OnInit  {
 
-  resultsVisible: boolean = true;
+  resultsVisible: Array<boolean>;
   betsModel: Array<BetModel>;
 
   constructor(private betApi: BetAPI) {
     this.betsModel = betApi.getAllBetsJson();
   }
 
-  ngOnInit() { console.log('ngOnInit Correct CorrecScore'); }
+  ngOnInit() {
+    console.log('ngOnInit Correct CorrecScore');
+    this.resultsVisible = new Array(this.betsModel.length);
+  }
 
-  activeResults() {}
+  activeResults(idBet:number) {
+    this.resultsVisible[idBet] = !this.resultsVisible[idBet];
+    this.setChangeIcon(idBet +1);
+  }
+
+  setChangeIcon(id:number) {
+    (<HTMLInputElement>
+        document.getElementById(`glyphiconBet${id}`)).className = '';
+    if(this.resultsVisible[id -1] === false)
+      (<HTMLInputElement>
+        document.getElementById(`glyphiconBet${id}`)).className = 'glyphicon glyphicon-chevron-down';
+    else
+      (<HTMLInputElement>
+        document.getElementById(`glyphiconBet${id}`)).className = 'glyphicon glyphicon-chevron-up';
+  }
 }

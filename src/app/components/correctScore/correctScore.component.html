@@ -1,9 +1,9 @@
 
   <div *ngFor="let bet of betsModel" class="col-xs-12 correctScoreHeader">
-      <span class="glyphicon glyphicon-chevron-down" (click)="activeResults()"></span>
+      <span id="glyphiconBet{{bet.id}}" class="glyphicon glyphicon-chevron-down" (click)="activeResults(bet.id -1)"></span>
       {{bet.homeTeam}} - {{bet.awayTeam}}
 
-      <div id="resultScore{{bet.id}}" class="col-xs-12 text-center marginTopBottom" *ngIf="resultsVisible">
+      <div class="col-xs-12 text-center marginTopBottom" *ngIf="resultsVisible[bet.id - 1]">
         <!--HOME WIN-->
         <div class="col-xs-4">
           <span class="label label-primary">{{bet.homeTeam}} win</span>
