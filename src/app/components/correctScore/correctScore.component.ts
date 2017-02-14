@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import { CorrectScoreModel } from './../../model/correctScore';
+import { Component, OnInit } from '@angular/core';
 import { BetAPI } from '../../api/betApi';
 import { BetModel } from './../../model/betModel';
 import { typeCorrectScoreEnum } from './../../common/typeCorrectScoreEnum';
@@ -38,4 +39,10 @@ export class CorrectScoreComponent implements OnInit  {
       (<HTMLInputElement>
         document.getElementById(`glyphiconBet${id}`)).className = 'glyphicon glyphicon-chevron-up';
   }
+
+  setBetCorrectScore(buttonId, bet: BetModel, resultScore: CorrectScoreModel) {
+    (<HTMLInputElement>
+      document.getElementById(buttonId)).disabled = true;
+  }
+
 }

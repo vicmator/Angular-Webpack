@@ -9,7 +9,10 @@
           <span class="label label-primary">{{bet.homeTeam}} win</span>
           <div *ngFor="let resultScore of (bet.correctScoreModel | filterTypeResult: 'homeWin')"
                class="col-xs-12 marginResultScore">
-               <button class="btn btn-default">
+               <button id="btn{{bet.id}}{{resultScore.id}}"
+                       class="btn btn-default"
+                       type="button"
+                       (click)= "setBetCorrectScore($event.currentTarget.id, bet, resultScore)">
                  {{resultScore.localScore}} - {{resultScore.awayScore}} ({{resultScore.rate}})
                </button>
           </div>
@@ -19,7 +22,10 @@
           <span class="label label-primary">Draw</span>
           <div *ngFor="let resultScore of (bet.correctScoreModel | filterTypeResult: 'draw')"
                class="col-xs-12 marginResultScore">
-               <button class="btn btn-default">
+               <button id="btn{{bet.id}}{{resultScore.id}}"
+                       class="btn btn-default"
+                       type="button"
+                       (click)= "setBetCorrectScore($event.currentTarget.id, bet, resultScore)">
                  {{resultScore.localScore}} - {{resultScore.awayScore}} ({{resultScore.rate}})
                </button>
           </div>
@@ -29,7 +35,10 @@
           <span class="label label-primary">{{bet.awayTeam}} win</span>
           <div *ngFor="let resultScore of (bet.correctScoreModel | filterTypeResult: 'awayWin')"
                class="col-xs-12 marginResultScore">
-            <button class="btn btn-default">
+            <button id="btn{{bet.id}}{{resultScore.id}}"
+                       class="btn btn-default"
+                       type="button"
+                       (click)= "setBetCorrectScore($event.currentTarget.id, bet, resultScore)">
                  {{resultScore.localScore}} - {{resultScore.awayScore}} ({{resultScore.rate}})
                </button>
           </div>
