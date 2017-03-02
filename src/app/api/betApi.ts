@@ -9,6 +9,15 @@ let betDataJSON = require('./data/betData.json');
 
 class BetAPI {
 
+  public betsModel: Array<BetModel> | Promise<BetModel[]>;
+
+  constructor() {
+    // Using Json
+    this.betsModel = this.getAllBetsJson();
+    // Using url with fetch
+    // this.betsModel = this.getAllBetsUrl();
+  }
+
   // Using fetch with Url
   public getAllBetsUrl(): Promise<BetModel[]> {
     // If we use url in future

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { betApi } from '../../api/betApi';
+import { BetService } from '../../service/betService';
 import { BetModel } from './../../model/betModel';
 import { typeBetEnum } from '../../common/typeBetEnum';
 import { titleTableBet } from './../../common/titleTableBet';
@@ -19,8 +19,8 @@ class TableComponent implements OnInit{
   betsModel: Array<BetModel>;
   titles: Array<string>;
 
-  constructor() {
-    this.betsModel = betApi.getAllBetsJson();
+  constructor(private betService: BetService) {
+    this.betsModel = betService.getAllBets();
   }
 
   ngOnInit() {

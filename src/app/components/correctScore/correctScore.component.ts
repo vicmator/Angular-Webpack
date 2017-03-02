@@ -1,6 +1,6 @@
 import { CorrectScoreModel } from './../../model/correctScore';
 import { Component, OnInit } from '@angular/core';
-import { betApi } from '../../api/betApi';
+import { BetService } from '../../service/betService';
 import { BetModel } from './../../model/betModel';
 import { typeCorrectScoreEnum } from './../../common/typeCorrectScoreEnum';
 
@@ -15,8 +15,8 @@ export class CorrectScoreComponent implements OnInit  {
   resultsVisible: Array<boolean>;
   betsModel: Array<BetModel>;
 
-  constructor() {
-    this.betsModel = betApi.getAllBetsJson();
+  constructor(private betService: BetService) {
+    this.betsModel = betService.getAllBets();
   }
 
   ngOnInit() {
