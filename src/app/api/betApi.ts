@@ -6,8 +6,8 @@ import { CorrectScoreModel } from '../model/correctScore';
 
 let betDataJSON = require('./data/betData.json');
 
-@Injectable()
-export class BetAPI {
+
+class BetAPI {
 
   // Using fetch with Url
   public getAllBetsUrl(): Promise<BetModel[]> {
@@ -63,3 +63,5 @@ export class BetAPI {
     return bets;
   }
 }
+
+export const betApi = new BetAPI();

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BetAPI } from './api/betApi';
+// import { BetAPI } from './api/betApi';
 
 import { TabsComponent } from './components/tabs/tabs.component';
 import { HeaderComponent } from './components/common/header/header.component';
@@ -13,7 +13,7 @@ import { typeBetEnum } from './common/typeBetEnum';
   selector: 'app', //This property is used to define how to call this component from HTML
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [BetAPI]
+  // providers: [BetAPI]
 })
 
 class AppComponent {
