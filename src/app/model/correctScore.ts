@@ -5,11 +5,13 @@ export class CorrectScoreModel {
   localScore: number;
   awayScore: number;
   rate: number;
+  selected:boolean;
 
   constructor() {
     this.id = -1;
     this.localScore = -1;
     this.awayScore = -1;
     this.rate = -1;
+    this.selected = false;
   }
 }
