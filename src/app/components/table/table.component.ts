@@ -35,8 +35,14 @@ class TableComponent implements OnInit{
   }
 
   setBet(buttonId, bet: BetModel, betName:string) {
+    // Put model selected option bet
     bet[this.typeBet][betName].selected = true;
-    // betType
+    
+    
+    this.setShown(buttonId);
+  }
+
+  setShown(buttonId) {
     (<HTMLInputElement> document.getElementById(buttonId)).disabled = true;
   }
 }
