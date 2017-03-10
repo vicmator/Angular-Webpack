@@ -49,20 +49,21 @@ class BetAPI {
 
   private mapBetsJsonToBetsEntityCollection(data: any): BetModel[] {
 
-    const bets = data.map((bet) => {
+    const bets = data.map((bet: BetModel) => {
       var betModel : BetModel = new BetModel();
       betModel.id = bet.id;
       betModel.homeTeam = bet.homeTeam;
       betModel.awayTeam = bet.awayTeam;
       betModel.multiResult = bet.multiResult;
       betModel.dobleChance = bet.dobleChance;
-      betModel.correctScoreModel = bet.correctScoreModel.map((correctScoreJson) => {
+      betModel.correctScoreModel = bet.correctScoreModel.map((correctScoreJson: CorrectScoreModel) => {
         var correctScore : CorrectScoreModel = new CorrectScoreModel();
 
         correctScore.id = correctScoreJson.id;
         correctScore.localScore = correctScoreJson.localScore;
         correctScore.awayScore = correctScoreJson.awayScore;
         correctScore.rate = correctScoreJson.rate;
+        correctScore.selected = correctScoreJson.selected == null ? false: correctScoreJson.selected;
 
         return correctScore;
       });
