@@ -1,0 +1,102 @@
+
+<div *ngIf="_typeBet == 'multiResult'">
+  <div class="col-xs-12 well well-sm" *ngFor="let bet of bets">
+    <section class="titleMatch">
+      <span class="label label-default">{{bet.homeTeam}}  - {{bet.awayTeam}}</span>
+
+    </section>
+    <!--HOME-->
+    <div *ngIf="this.bet[this._typeBet].homeRate.selected">
+      <span id="btnDelete{{_typeBet}}homeRate"
+            type="button"
+            (click)="deleteBetDone(bet, 'homeRate');"
+            class="glyphicon glyphicon-remove pull-right"></span>
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">{{bet.homeTeam}} -> {{bet[_typeBet].homeRate.rate}}</div>
+          <div class="col-xs-5"><input type="text" class="form-control pull-right" placeholder=""></div>
+        </div>
+      </div>
+      <label class="control-label">Ganancia potencial: 15</label>
+      <hr>
+    </div>
+    <!--DRAW-->
+    <div *ngIf="bet[_typeBet].drawRate.selected">
+      <span id="btnDelete{{_typeBet}}drawRate"
+            type="button"
+            (click)="deleteBetDone(bet, 'drawRate');"
+            class="glyphicon glyphicon-remove pull-right"></span>
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">Draw -> {{bet[_typeBet].drawRate.rate}}</div>
+          <div class="col-xs-5"><input type="text" class="form-control pull-right" placeholder=""></div>
+        </div>
+      </div>
+      <label class="control-label">Ganancia potencial: 15</label>
+      <hr>
+    </div>
+    <!--AWAY-->
+    <div *ngIf="bet[_typeBet].awayRate.selected">
+      <span id="btnDelete{{_typeBet}}awayRate"
+            type="button"
+            (click)="deleteBetDone(bet, 'awayRate');"
+            class="glyphicon glyphicon-remove pull-right"></span>
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">{{bet.awayTeam}} -> {{bet[_typeBet].awayRate.rate}}</div>
+          <div class="col-xs-5"><input type="text" class="form-control pull-right" placeholder=""></div>
+        </div>
+      </div>
+      <label class="control-label">Ganancia potencial: 15</label>
+      <hr>
+    </div>
+
+  </div>
+</div>
+
+<!--DOBLE CHANCE-->
+<div *ngIf="_typeBet == 'dobleChance'" >
+  <div class="col-xs-12 well well-sm" *ngFor="let bet of bets">
+    <section class="titleMatch">
+      <span class="label label-default">{{bet.homeTeam}}  - {{bet.awayTeam}}</span>
+      <span class="glyphicon glyphicon-remove pull-right"></span>
+    </section>
+    <!--HOME/DRAW-->
+    <div *ngIf="this.bet[this._typeBet].homeDrawRate.selected">
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">{{bet.homeTeam}} / Draw -> {{bet[_typeBet].homeDrawRate.rate}}</div>
+          <div class="col-xs-5"><input type="text" class="form-control pull-right" placeholder=""></div>
+        </div>
+      </div>
+      <label class="control-label">Ganancia potencial: 15</label>
+      <hr>
+    </div>
+    <!--HOME/AWAY-->
+    <div *ngIf="bet[_typeBet].drawRate.selected">
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">{{bet.homeTeam}}/{{bet.awayTeam}} -> {{bet[_typeBet].homeAwayRate.rate}}</div>
+          <div class="col-xs-5"><input type="text" class="form-control pull-right" placeholder=""></div>
+        </div>
+      </div>
+      <label class="control-label">Ganancia potencial: 15</label>
+      <hr>
+    </div>
+    <!--AWAY/DRAW-->
+    <div *ngIf="bet[_typeBet].awayDrawRate.selected">
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">{{bet.awayTeam}}/Draw -> {{bet[_typeBet].awayDrawRate.rate}}</div>
+          <div class="col-xs-5"><input type="text" class="form-control pull-right" placeholder=""></div>
+        </div>
+      </div>
+      <label class="control-label">Ganancia potencial: 15</label>
+      <hr>
+    </div>
+
+  </div>
+</div>
+<div *ngIf="_typeBet == 'resultScore'" >
+  RESULTSCORE
+</div>

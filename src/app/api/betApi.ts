@@ -1,4 +1,4 @@
-import { Promise } from "core-js";
+import {} from "core-js";
 import { Injectable } from '@angular/core';
 import {} from 'whatwg-fetch';
 import { BetModel } from '../model/betModel';
@@ -9,7 +9,7 @@ let betDataJSON = require('./data/betData.json');
 
 class BetAPI {
 
-  public betsModel: Array<BetModel> | Promise<BetModel[]>;
+  betsModel: Array<BetModel>;
 
   constructor() {
     // Using Json
@@ -71,6 +71,28 @@ class BetAPI {
     });
 
     return bets;
+  }
+
+  public changeSelected(betId: number, typeBet: string, betName:string) {
+    const index = this.betsModel.findIndex(bet => bet.id === betId);
+    var betSelected = this.betsModel.filter(bet => bet.id === betId)[0];
+    betSelected[typeBet][betName].selected = true;
+
+    this.betsModel = this.betsModel
+    .slice(0, index)
+    .concat([betSelected])
+    .concat(this.betsModel.slice(index + 1));
+  }
+
+  public deleteSelected(betId, typeBet, typeRate) {
+    const index = this.betsModel.findIndex(bet => bet.id === betId);
+    var betDeleted = this.betsModel.filter(bet => bet.id === betId)[0];
+    betDeleted[typeBet][typeRate].selected = false;
+
+    this.betsModel = this.betsModel
+    .slice(0, index)
+    .concat([betDeleted])
+    .concat(this.betsModel.slice(index + 1));
   }
 }
 

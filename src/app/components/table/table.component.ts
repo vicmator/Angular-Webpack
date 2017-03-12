@@ -4,11 +4,13 @@ import { BetModel } from './../../model/betModel';
 import { typeBetEnum } from '../../common/typeBetEnum';
 import { titleTableBet } from './../../common/titleTableBet';
 
+import { ResultBetComponent } from './../resultBets/resultBet/resultBet.component';
+
 @Component(
 {
   selector: 'table-bet',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
 })
 
 class TableComponent implements OnInit{
@@ -36,9 +38,7 @@ class TableComponent implements OnInit{
 
   setBet(buttonId, bet: BetModel, betName:string) {
     // Put model selected option bet
-    bet[this.typeBet][betName].selected = true;
-    
-    
+    this.betService.changeSelected(bet.id, this.typeBet, betName);
     this.setShown(buttonId);
   }
 

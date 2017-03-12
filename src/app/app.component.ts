@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 import { BetService } from './service/betService';
 
-import { TabsComponent } from './components/tabs/tabs.component';
-import { HeaderComponent } from './components/common/header/header.component';
-import { TableComponent } from './components/table/table.component';
-import { CorrectScoreComponent } from './components/correctScore/correctScore.component';
-
 import { typeBetEnum } from './common/typeBetEnum';
 
 @Component(
@@ -17,6 +12,7 @@ import { typeBetEnum } from './common/typeBetEnum';
 })
 
 class AppComponent {
+  debugger;
   typeBetEnum = typeBetEnum;
 }
 
