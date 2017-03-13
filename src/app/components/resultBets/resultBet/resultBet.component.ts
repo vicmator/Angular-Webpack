@@ -32,9 +32,11 @@ export class ResultBetComponent implements OnInit {
   }
 
   rateValueChange(event, bet: BetModel, typeRate: string) {
+
     var rateBet:number = bet[this._typeBet][typeRate].rate;
     let rateInput:number = event.currentTarget.value;
     this.winRate = Math.round((rateInput * rateBet) * 100) / 100;
-
+    bet[this._typeBet][typeRate].winRate = Math.round((rateInput * rateBet) * 100) / 100;
+    this.bets.filter(x=> x.id === bet.id)[0] = bet;
   }
 }

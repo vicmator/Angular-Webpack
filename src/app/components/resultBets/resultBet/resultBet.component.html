@@ -1,4 +1,3 @@
-
 <!--MULTI RESULT-->
 <div *ngIf="_typeBet == 'multiResult'">
   <div class="col-xs-12 well well-sm" *ngFor="let bet of bets; let i=index">
@@ -22,7 +21,7 @@
           </div>
         </div>
       </div>
-      <label class="control-label">Win Rate: {{winRate}}</label>
+      <label class="control-label">Win Rate: {{bet[_typeBet].homeRate.winRate}}</label>
       <hr>
     </div>
     <!--DRAW-->
@@ -45,7 +44,7 @@
           </div>
         </div>
       </div>
-      <label class="control-label">Win Rate: {{winRate}}</label>
+      <label class="control-label">Win Rate: {{bet[_typeBet].drawRate.winRate}}</label>
       <hr>
     </div>
     <!--AWAY-->
@@ -68,7 +67,7 @@
           </div>
         </div>
       </div>
-      <label class="control-label">Win Rate: {{winRate}}</label>
+      <label class="control-label">Win Rate: {{bet[_typeBet].awayRate.winRate}}</label>
       <hr>
     </div>
   </div>
@@ -98,7 +97,7 @@
           </div>
         </div>
       </div>
-      <label class="control-label">Win Rate: {{winRate}}</label>
+      <label class="control-label">Win Rate: {{bet[_typeBet].homeDrawRate.winRate}}</label>
       <hr>
     </div>
     <!--HOME/AWAY-->
@@ -121,7 +120,7 @@
           </div>
         </div>
       </div>
-      <label class="control-label">Win Rate: {{winRate}}</label>
+      <label class="control-label">Win Rate: {{bet[_typeBet].homeAwayRate.winRate}}</label>
       <hr>
     </div>
     <!--AWAY/DRAW-->
@@ -144,7 +143,7 @@
           </div>
         </div>
       </div>
-      <label class="control-label">Win Rate: {{winRate}}</label>
+      <label class="control-label">Win Rate: {{bet[_typeBet].awayDrawRate.winRate}}</label>
       <hr>
     </div>
 
