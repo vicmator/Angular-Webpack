@@ -27,26 +27,12 @@ export class ResultBetsComponent implements OnInit  {
   }
 
   onBetModified() {
-    this.multiResultSelectedBets = this.bets.filter(bet => bet.multiResult.homeRate.selected
-                                                        || bet.multiResult.awayRate.selected
-                                                        || bet.multiResult.drawRate.selected);
-    this.dobleChanceSelectedBets = this.bets.filter(bet => bet.dobleChance.homeAwayRate.selected
-                                                        || bet.dobleChance.homeDrawRate.selected
-                                                        || bet.dobleChance.awayDrawRate.selected);
-
+    this.multiResultSelectedBets = this.betService.getMultiResultSelectedBets(this.bets);
+    this.dobleChanceSelectedBets = this.betService.getDobleChanceSelectedBets(this.bets);
+    this.resultScoreSelectedBets = this.betService.getMultiResultSelectedBets(this.bets);
   }
 
   ngOnInit() {
 
-
-    // this.resultScoreSelectedBets = this.bets.map((bet:BetModel) => {
-    //   var betCorrectScore: BetModel = new BetModel();
-    //   betCorrectScore = bet.correctScoreModel.filter(correctScore => correctScore.selected)
-    //   return betCorrectScore;
-    // });
-
-    // this.resultScoreSelectedBets = this.bets.map((bet:BetModel) => {
-    //   return bet.correctScoreModel.filter(x=> x.selected);
-    // });
   }
 }

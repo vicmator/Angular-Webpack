@@ -40,7 +40,9 @@ export class CorrectScoreComponent implements OnInit  {
         document.getElementById(`glyphiconBet${id}`)).className = 'glyphicon glyphicon-chevron-up';
   }
 
-  setBetCorrectScore(buttonId, bet: BetModel, resultScore: CorrectScoreModel) {
+  setBetCorrectScore(buttonId, bet: BetModel, resultScoreId: number) {
+    // Fix Before the added resultScore
+    // this.betService.changeResultScoreSelected(bet.id, resultScoreId);
     (<HTMLInputElement>
       document.getElementById(buttonId)).disabled = true;
   }

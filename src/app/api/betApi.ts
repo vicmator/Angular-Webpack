@@ -84,6 +84,19 @@ class BetAPI {
     .concat(this.betsModel.slice(index + 1));
   }
 
+  public changeResultScoreSelected(betId, resultScoreId) {
+    const index = this.betsModel.findIndex(bet => bet.id === betId);
+    const indexResultScore = this.betsModel[index].correctScoreModel
+                             .findIndex(resultScore => resultScore.id === resultScoreId);
+    var betSelected = this.betsModel[index].correctScoreModel[indexResultScore];
+    betSelected.selected = true;
+
+    this.betsModel[index].correctScoreModel = this.betsModel[index].correctScoreModel
+    .slice(0, indexResultScore)
+    .concat([betSelected])
+    .concat(this.betsModel[index].correctScoreModel.slice(indexResultScore + 1));
+  }
+
   public deleteSelected(betId, typeBet, typeRate) {
     const index = this.betsModel.findIndex(bet => bet.id === betId);
     var betDeleted = this.betsModel.filter(bet => bet.id === betId)[0];

@@ -17,29 +17,25 @@ export class ResultBetComponent implements OnInit {
   }
   @Input()
   bets: Array<BetModel>;
+  winRate = 0;
 
   constructor(private betService: BetService) {
-  }
 
-  // ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-  //   let log: string[] = [];
-  //   for (let propName in changes) {
-  //     let changedProp = changes[propName];
-  //     let to = JSON.stringify(changedProp.currentValue);
-  //     if (changedProp.isFirstChange()) {
-  //       log.push(`Initial value of ${propName} set to ${to}`);
-  //     } else {
-  //       let from = JSON.stringify(changedProp.previousValue);
-  //       log.push(`${propName} changed from ${from} to ${to}`);
-  //     }
-  //   }
-  // }
+  }
 
   ngOnInit() {
   }
 
   deleteBetDone(bet:BetModel, typeRate: string) {
     this.betService.deleteSelected(bet.id, this._typeBet, typeRate);
-    alert(typeRate);
+    (<HTMLInputElement> document.getElementById(`btn${typeRate}${bet.id}`)).disabled = false;
+  }
+
+  // CHANGE NUMBER WINRATE WHEN SEPARATE IN DIFFERENT COMPONENT
+  rateValueChange(event, bet: BetModel, typeRate: string) {
+    var rateBet:number = bet[this._typeBet][typeRate].rate;
+    let rateInput:number = event.currentTarget.value;
+    this.winRate = Math.round((rateInput * rateBet) * 100) / 100;
+
   }
 }
