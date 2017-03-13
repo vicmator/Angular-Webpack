@@ -1,0 +1,184 @@
+
+<!--MULTI RESULT-->
+<div *ngIf="_typeBet == 'multiResult'">
+  <div class="col-xs-12 well well-sm" *ngFor="let bet of bets; let i=index">
+    <!--HOME-->
+    <div *ngIf="this.bet[this._typeBet].homeRate.selected">
+      <section class="titleMatch">
+        <span class="label label-default">{{bet.homeTeam}}  - {{bet.awayTeam}}</span>
+        <span id="btnDelete{{_typeBet}}homeRate"
+              type="button"
+              (click)="deleteBetDone(bet, 'homeRate');"
+              class="glyphicon glyphicon-remove pull-right"></span>
+      </section>
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">{{bet.homeTeam}} -> {{bet[_typeBet].homeRate.rate}}</div>
+          <div class="col-xs-5">
+            <input (keyup)="rateValueChange($event, bet, 'homeRate')"
+                   type="number"
+                   class="form-control pull-right"
+                   placeholder="">
+          </div>
+        </div>
+      </div>
+      <label class="control-label">Win Rate: {{winRate}}</label>
+      <hr>
+    </div>
+    <!--DRAW-->
+    <div *ngIf="bet[_typeBet].drawRate.selected">
+      <section class="titleMatch">
+        <span class="label label-default">{{bet.homeTeam}}  - {{bet.awayTeam}}</span>
+        <span id="btnDelete{{_typeBet}}drawRate"
+            type="button"
+            (click)="deleteBetDone(bet, 'drawRate');"
+            class="glyphicon glyphicon-remove pull-right"></span>
+      </section>
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">Draw -> {{bet[_typeBet].drawRate.rate}}</div>
+          <div class="col-xs-5">
+            <input (keyup)="rateValueChange($event, bet, 'drawRate')"
+                   type="number"
+                   class="form-control pull-right"
+                   placeholder="">
+          </div>
+        </div>
+      </div>
+      <label class="control-label">Win Rate: {{winRate}}</label>
+      <hr>
+    </div>
+    <!--AWAY-->
+    <div *ngIf="bet[_typeBet].awayRate.selected">
+      <section class="titleMatch">
+        <span class="label label-default">{{bet.homeTeam}}  - {{bet.awayTeam}}</span>
+        <span id="btnDelete{{_typeBet}}awayRate"
+            type="button"
+            (click)="deleteBetDone(bet, 'awayRate');"
+            class="glyphicon glyphicon-remove pull-right"></span>
+      </section>
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">{{bet.awayTeam}} -> {{bet[_typeBet].awayRate.rate}}</div>
+          <div class="col-xs-5">
+            <input (keyup)="rateValueChange($event, bet, 'awayRate')"
+                   type="number"
+                   class="form-control pull-right"
+                   placeholder="">
+          </div>
+        </div>
+      </div>
+      <label class="control-label">Win Rate: {{winRate}}</label>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<!--DOBLE CHANCE-->
+<div *ngIf="_typeBet == 'dobleChance'" >
+  <div class="col-xs-12 well well-sm" *ngFor="let bet of bets">
+
+    <!--HOME/DRAW-->
+    <div *ngIf="bet[_typeBet].homeDrawRate.selected">
+      <section class="titleMatch">
+        <span class="label label-default">{{bet.homeTeam}}  - {{bet.awayTeam}}</span>
+        <span id="btnDelete{{_typeBet}}homeDrawRate"
+                type="button"
+                (click)="deleteBetDone(bet, 'homeDrawRate');"
+                class="glyphicon glyphicon-remove pull-right"></span>
+      </section>
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">{{bet.homeTeam}} / Draw -> {{bet[_typeBet].homeDrawRate.rate}}</div>
+          <div class="col-xs-5">
+            <input (keyup)="rateValueChange($event, bet, 'homeDrawRate')"
+                   type="number"
+                   class="form-control pull-right"
+                   placeholder="">
+          </div>
+        </div>
+      </div>
+      <label class="control-label">Win Rate: {{winRate}}</label>
+      <hr>
+    </div>
+    <!--HOME/AWAY-->
+    <div *ngIf="bet[_typeBet].homeAwayRate.selected">
+      <section class="titleMatch">
+        <span class="label label-default">{{bet.homeTeam}}  - {{bet.awayTeam}}</span>
+        <span id="btnDelete{{_typeBet}}homeAwayRate"
+                type="button"
+                (click)="deleteBetDone(bet, 'homeAwayRate');"
+                class="glyphicon glyphicon-remove pull-right"></span>
+      </section>
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">{{bet.homeTeam}}/{{bet.awayTeam}} -> {{bet[_typeBet].homeAwayRate.rate}}</div>
+          <div class="col-xs-5">
+            <input (keyup)="rateValueChange($event, bet, 'homeAwayRate')"
+                   type="number"
+                   class="form-control pull-right"
+                   placeholder="">
+          </div>
+        </div>
+      </div>
+      <label class="control-label">Win Rate: {{winRate}}</label>
+      <hr>
+    </div>
+    <!--AWAY/DRAW-->
+    <div *ngIf="bet[_typeBet].awayDrawRate.selected">
+      <section class="titleMatch">
+        <span class="label label-default">{{bet.homeTeam}}  - {{bet.awayTeam}}</span>
+        <span id="btnDelete{{_typeBet}}awayDrawRate"
+                type="button"
+                (click)="deleteBetDone(bet, 'awayDrawRate');"
+                class="glyphicon glyphicon-remove pull-right"></span>
+      </section>
+      <div class="row marginTop">
+        <div class="col-xs-12 vcenter">
+          <div class="col-xs-7">{{bet.awayTeam}}/Draw -> {{bet[_typeBet].awayDrawRate.rate}}</div>
+          <div class="col-xs-5">
+            <input (keyup)="rateValueChange($event, bet, 'awayDrawRate')"
+                   type="number"
+                   class="form-control pull-right"
+                   placeholder="">
+          </div>
+        </div>
+      </div>
+      <label class="control-label">Win Rate: {{winRate}}</label>
+      <hr>
+    </div>
+
+  </div>
+</div>
+
+<!--RESULTSCORE-->
+<div *ngIf="_typeBet == 'resultScore'" >
+  <div class="col-xs-12 well well-sm" *ngFor="let bet of bets">
+    <div *ngFor="let correctScore of bet.correctScoreModel">
+      <div *ngIf="correctScore.selected">
+        <section class="titleMatch">
+          <span class="label label-default">{{bet.homeTeam}}  - {{bet.awayTeam}}</span>
+          <span id="btnDelete{{_typeBet}}resultScore{{correctScore.id}}"
+                type="button"
+                (click)="deleteBetDone(bet.id, correctScore.id);"
+                class="glyphicon glyphicon-remove pull-right"></span>
+        </section>
+        <div class="row marginTop">
+          <div class="col-xs-12 vcenter">
+            <div class="col-xs-7">
+              {{correctScore.localScore}} - {{correctScore.awayScore}} -> {{correctScore.rate}}
+            </div>
+            <div class="col-xs-5">
+              <!--<input (keyup)="rateValueChange($event, bet, 'homeRate')"
+                    type="number"
+                    class="form-control pull-right"
+                    placeholder="">-->
+            </div>
+          </div>
+        </div>
+        <label class="control-label">Win Rate: {{winRate}}</label>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

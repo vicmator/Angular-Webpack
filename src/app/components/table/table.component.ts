@@ -1,14 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BetAPI } from '../../api/betApi';
+import { BetService } from '../../service/betService';
 import { BetModel } from './../../model/betModel';
 import { typeBetEnum } from '../../common/typeBetEnum';
 import { titleTableBet } from './../../common/titleTableBet';
+
+import { ResultBetComponent } from './../resultBets/resultBet/resultBet.component';
 
 @Component(
 {
   selector: 'table-bet',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
 })
 
 class TableComponent implements OnInit{
@@ -19,8 +21,8 @@ class TableComponent implements OnInit{
   betsModel: Array<BetModel>;
   titles: Array<string>;
 
-  constructor(private betApi: BetAPI) {
-    this.betsModel = betApi.getAllBetsJson();
+  constructor(private betService: BetService) {
+    this.betsModel = betService.getAllBets();
   }
 
   ngOnInit() {
@@ -34,8 +36,13 @@ class TableComponent implements OnInit{
     }
   }
 
-  setBet(buttonId, betModel: BetModel, betName:string) {
-    // betType
+  setBet(buttonId, bet: BetModel, betName:string) {
+    // Put model selected option bet
+    this.betService.changeSelected(bet.id, this.typeBet, betName);
+    this.setShown(buttonId);
+  }
+
+  setShown(buttonId) {
     (<HTMLInputElement> document.getElementById(buttonId)).disabled = true;
   }
 }

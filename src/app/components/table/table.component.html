@@ -10,14 +10,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let betModel of betsModel">
-        <td>{{betModel.homeTeam}} - {{betModel.awayTeam}}</td>
+      <tr *ngFor="let bet of betsModel">
+        <td>{{bet.homeTeam}} - {{bet.awayTeam}}</td>
         <td *ngFor="let option of options; let i=index">
-          <button id="btn{{betModel.id}}{{option}}"
+          <button id="btn{{option}}{{bet.id}}"
                   type="button"
                   class="btn btn-link "
-                  (click)= "setBet($event.currentTarget.id, betModel, option)">
-            {{betModel[typeBet][option].rate}}
+                  (click)= "setBet($event.currentTarget.id, bet, option)">
+            {{bet[typeBet][option].rate}}
           </button>
         </td>
       </tr>

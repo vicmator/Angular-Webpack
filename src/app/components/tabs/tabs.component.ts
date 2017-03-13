@@ -19,11 +19,14 @@ class TabsComponent implements AfterContentInit {
     let activeTabs = this.tabList.filter((tab) => tab.active);
 
     if(activeTabs.length === 0) {
-      this.selectTab(this.tabList.first);
+      this.selectTab(null, this.tabList.first);
     }
   }
 
-  selectTab(tab: TabComponent) {
+  selectTab(event, tab: TabComponent) {
+    if(event !== null) {
+      event.preventDefault();
+    }
     this.tabList.toArray().forEach((tab) => tab.active = false);
 
     tab.active = true;

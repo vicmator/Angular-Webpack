@@ -1,9 +1,11 @@
 export class TypeRate {
-  public type: string;
-  public rate: number;
+  type: string;
+  rate: number;
+  selected:boolean;
 
   constructor() {
     this.type = "";
     this.rate = 0;
+    this.selected = false;
   }
 }

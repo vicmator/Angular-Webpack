@@ -1,6 +1,6 @@
 import { CorrectScoreModel } from './../../model/correctScore';
 import { Component, OnInit } from '@angular/core';
-import { BetAPI } from '../../api/betApi';
+import { BetService } from '../../service/betService';
 import { BetModel } from './../../model/betModel';
 import { typeCorrectScoreEnum } from './../../common/typeCorrectScoreEnum';
 
@@ -15,8 +15,8 @@ export class CorrectScoreComponent implements OnInit  {
   resultsVisible: Array<boolean>;
   betsModel: Array<BetModel>;
 
-  constructor(private betApi: BetAPI) {
-    this.betsModel = betApi.getAllBetsJson();
+  constructor(private betService: BetService) {
+    this.betsModel = betService.getAllBets();
   }
 
   ngOnInit() {
@@ -40,7 +40,9 @@ export class CorrectScoreComponent implements OnInit  {
         document.getElementById(`glyphiconBet${id}`)).className = 'glyphicon glyphicon-chevron-up';
   }
 
-  setBetCorrectScore(buttonId, bet: BetModel, resultScore: CorrectScoreModel) {
+  setBetCorrectScore(buttonId, bet: BetModel, resultScoreId: number) {
+    // Fix Before the added resultScore
+    // this.betService.changeResultScoreSelected(bet.id, resultScoreId);
     (<HTMLInputElement>
       document.getElementById(buttonId)).disabled = true;
   }

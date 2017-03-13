@@ -1,5 +1,5 @@
 <ul class="nav nav-tabs">
-    <li *ngFor="let tab of tabList" (click)="selectTab(tab)" [class.active]="tab.active">
+    <li *ngFor="let tab of tabList" (click)="selectTab($event,tab)" [class.active]="tab.active">
         <a href="#">{{tab.title}}</a>
     </li>
 </ul>
