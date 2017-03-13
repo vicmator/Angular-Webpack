@@ -7,16 +7,19 @@
       "homeRate": {
         "type": "1",
         "rate": 1.54,
+        "winRate": 0,
         "selected": false
       },
       "awayRate": {
         "type": "2",
         "rate": 2.22,
+        "winRate": 0,
         "selected": false
       },
       "drawRate": {
         "type": "X",
         "rate": 1.60,
+        "winRate": 0,
         "selected": false
       }
     },
@@ -24,16 +27,19 @@
       "homeDrawRate": {
         "type": "1X",
         "rate": 1.48,
+        "winRate": 0,
         "selected": false
       },
       "homeAwayRate": {
         "type": "12",
         "rate": 2.14,
+        "winRate": 0,
         "selected": false
       },
       "awayDrawRate": {
         "type": "2X",
         "rate": 1.33,
+        "winRate": 0,
         "selected": false
       }
     },
@@ -43,6 +49,7 @@
         "localScore": 2,
         "awayScore": 1,
         "rate": 2.14,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -50,6 +57,7 @@
         "localScore": 1,
         "awayScore": 1,
         "rate": 1.14,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -57,6 +65,7 @@
         "localScore": 3,
         "awayScore": 3,
         "rate": 4.14,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -64,6 +73,7 @@
         "localScore": 3,
         "awayScore": 2,
         "rate": 5.03,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -71,6 +81,7 @@
         "localScore": 0,
         "awayScore": 1,
         "rate": 1.88,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -78,6 +89,7 @@
         "localScore": 0,
         "awayScore": 2,
         "rate": 3.22,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -85,6 +97,7 @@
         "localScore": 2,
         "awayScore": 2,
         "rate": 2.34,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -92,6 +105,7 @@
         "localScore": 1,
         "awayScore": 3,
         "rate": 4.24,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -99,6 +113,7 @@
         "localScore": 0,
         "awayScore": 0,
         "rate": 2.14,
+        "winRate": 0,
         "selected": false
       }
     ]
@@ -111,16 +126,19 @@
       "homeRate": {
         "type": "1",
         "rate": 1.20,
+        "winRate": 0,
         "selected": false
       },
       "awayRate": {
         "type": "2",
         "rate": 1.80,
+        "winRate": 0,
         "selected": false
       },
       "drawRate": {
         "type": "X",
         "rate": 2.60,
+        "winRate": 0,
         "selected": false
       }
     },
@@ -128,16 +146,19 @@
       "homeDrawRate": {
         "type": "1X",
         "rate": 1.66,
+        "winRate": 0,
         "selected": false
       },
       "homeAwayRate": {
         "type": "12",
         "rate": 2.45,
+        "winRate": 0,
         "selected": false
       },
       "awayDrawRate": {
         "type": "2X",
         "rate": 1.78,
+        "winRate": 0,
         "selected": false
       }
     },
@@ -147,6 +168,7 @@
         "localScore": 2,
         "awayScore": 1,
         "rate": 2.32,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -154,6 +176,7 @@
         "localScore": 2,
         "awayScore": 2,
         "rate": 2.77,
+        "winRate": 0,
         "selected": false
       },
 
@@ -162,6 +185,7 @@
         "localScore": 3,
         "awayScore": 3,
         "rate": 4.55,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -169,6 +193,7 @@
         "localScore": 0,
         "awayScore": 1,
         "rate": 1.99,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -176,6 +201,7 @@
         "localScore": 0,
         "awayScore": 2,
         "rate": 3.43,
+        "winRate": 0,
         "selected": false
       },
       {
@@ -183,6 +209,7 @@
         "localScore": 0,
         "awayScore": 0,
         "rate": 1.89,
+        "winRate": 0,
         "selected": false
       }
     ]
