@@ -1,7 +1,7 @@
 
 <!--MULTI RESULT-->
 <div *ngIf="_typeBet == 'multiResult'">
-  <div class="col-xs-12 well well-sm" *ngFor="let bet of bets">
+  <div class="col-xs-12 well well-sm" *ngFor="let bet of bets; let i=index">
     <!--HOME-->
     <div *ngIf="this.bet[this._typeBet].homeRate.selected">
       <section class="titleMatch">
@@ -15,7 +15,6 @@
         <div class="col-xs-12 vcenter">
           <div class="col-xs-7">{{bet.homeTeam}} -> {{bet[_typeBet].homeRate.rate}}</div>
           <div class="col-xs-5">
-            <!--CHANGE NUMBER WINRATE WHEN SEPARATE IN DIFFERENT COMPONENT-->
             <input (keyup)="rateValueChange($event, bet, 'homeRate')"
                    type="number"
                    class="form-control pull-right"
@@ -62,7 +61,7 @@
         <div class="col-xs-12 vcenter">
           <div class="col-xs-7">{{bet.awayTeam}} -> {{bet[_typeBet].awayRate.rate}}</div>
           <div class="col-xs-5">
-            <input (keyup)="rateValueChange($event, bet, 'awayRate', 2)"
+            <input (keyup)="rateValueChange($event, bet, 'awayRate')"
                    type="number"
                    class="form-control pull-right"
                    placeholder="">
@@ -92,14 +91,14 @@
         <div class="col-xs-12 vcenter">
           <div class="col-xs-7">{{bet.homeTeam}} / Draw -> {{bet[_typeBet].homeDrawRate.rate}}</div>
           <div class="col-xs-5">
-            <input (keyup)="rateValueChange($event, bet, 'homeDrawRate', 0)"
+            <input (keyup)="rateValueChange($event, bet, 'homeDrawRate')"
                    type="number"
                    class="form-control pull-right"
                    placeholder="">
           </div>
         </div>
       </div>
-      <label class="control-label">Win Rate: {{winRate[0]}}</label>
+      <label class="control-label">Win Rate: {{winRate}}</label>
       <hr>
     </div>
     <!--HOME/AWAY-->
@@ -115,14 +114,14 @@
         <div class="col-xs-12 vcenter">
           <div class="col-xs-7">{{bet.homeTeam}}/{{bet.awayTeam}} -> {{bet[_typeBet].homeAwayRate.rate}}</div>
           <div class="col-xs-5">
-            <input (keyup)="rateValueChange($event, bet, 'homeAwayRate', 1)"
+            <input (keyup)="rateValueChange($event, bet, 'homeAwayRate')"
                    type="number"
                    class="form-control pull-right"
                    placeholder="">
           </div>
         </div>
       </div>
-      <label class="control-label">Win Rate: {{winRate[1]}}</label>
+      <label class="control-label">Win Rate: {{winRate}}</label>
       <hr>
     </div>
     <!--AWAY/DRAW-->
@@ -138,14 +137,14 @@
         <div class="col-xs-12 vcenter">
           <div class="col-xs-7">{{bet.awayTeam}}/Draw -> {{bet[_typeBet].awayDrawRate.rate}}</div>
           <div class="col-xs-5">
-            <input (keyup)="rateValueChange($event, bet, 'awayDrawRate', 2)"
+            <input (keyup)="rateValueChange($event, bet, 'awayDrawRate')"
                    type="number"
                    class="form-control pull-right"
                    placeholder="">
           </div>
         </div>
       </div>
-      <label class="control-label">Win Rate: {{winRate[2]}}</label>
+      <label class="control-label">Win Rate: {{winRate}}</label>
       <hr>
     </div>
 

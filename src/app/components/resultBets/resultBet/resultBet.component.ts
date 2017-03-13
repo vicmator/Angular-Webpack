@@ -31,7 +31,6 @@ export class ResultBetComponent implements OnInit {
     (<HTMLInputElement> document.getElementById(`btn${typeRate}${bet.id}`)).disabled = false;
   }
 
-  // CHANGE NUMBER WINRATE WHEN SEPARATE IN DIFFERENT COMPONENT
   rateValueChange(event, bet: BetModel, typeRate: string) {
     var rateBet:number = bet[this._typeBet][typeRate].rate;
     let rateInput:number = event.currentTarget.value;
