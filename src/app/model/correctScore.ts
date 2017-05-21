@@ -5,6 +5,7 @@ export class CorrectScoreModel {
   localScore: number;
   awayScore: number;
   rate: number;
+  winRate: number;
   selected:boolean;
 
   constructor() {
@@ -12,6 +13,7 @@ export class CorrectScoreModel {
     this.localScore = -1;
     this.awayScore = -1;
     this.rate = -1;
+    this.winRate = 0;
     this.selected = false;
   }
 }

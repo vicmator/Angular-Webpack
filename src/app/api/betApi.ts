@@ -63,6 +63,7 @@ class BetAPI {
         correctScore.localScore = correctScoreJson.localScore;
         correctScore.awayScore = correctScoreJson.awayScore;
         correctScore.rate = correctScoreJson.rate;
+        correctScore.winRate = correctScoreJson.winRate;
         correctScore.selected = correctScoreJson.selected == null ? false: correctScoreJson.selected;
 
         return correctScore;
@@ -90,6 +91,7 @@ class BetAPI {
                              .findIndex(resultScore => resultScore.id === resultScoreId);
     var betSelected = this.betsModel[index].correctScoreModel[indexResultScore];
     betSelected.selected = true;
+    betSelected.winRate = 0;
 
     this.betsModel[index].correctScoreModel = this.betsModel[index].correctScoreModel
     .slice(0, indexResultScore)
@@ -100,7 +102,9 @@ class BetAPI {
   public deleteSelected(betId, typeBet, typeRate) {
     const index = this.betsModel.findIndex(bet => bet.id === betId);
     var betDeleted = this.betsModel.filter(bet => bet.id === betId)[0];
-    betDeleted[typeBet][typeRate].selected = false;
+    // Reset values
+    betDeleted[typeBet][typeRate].selected = false;    
+    betDeleted[typeBet][typeRate].winRate = 0;
 
     this.betsModel = this.betsModel
     .slice(0, index)
