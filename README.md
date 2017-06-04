@@ -1,5 +1,5 @@
-# Angular2-Webpack
-It's a single page using Angular2 and Typescript with Webpack
+# Angular4-Webpack
+It's a single page using Angular 4 and Typescript with Webpack
 
 # How to get started
 
