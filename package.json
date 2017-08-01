@@ -1,5 +1,5 @@
 {
-  "name": "angular2-webpack",
+  "name": "angular-webpack",
   "version": "1.0.0",
   "description": "It's a single page using Angular2 and Typescript with Webpack",
   "main": "index.js",
@@ -9,7 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "Angular",
     "Angular2",
+    "Angular4",
     "Typescripts",
     "webpack"
   ],
