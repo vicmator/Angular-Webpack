@@ -8,13 +8,13 @@ Clone or download this project.
 From the root folder of the project execute (command prompt):
 
 ```
-npm install
+npm install or yarn install
 ```
 
 Then
 
 ```
-npm start
+npm start or yarn install
 ```
 
 Open a browser and navigate to http://localhost:8080
